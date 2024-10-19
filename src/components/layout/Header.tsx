@@ -5,6 +5,7 @@ import { Typography } from "../ui/Typography";
 import { SiteConfig } from "@/lib/site-config";
 import Image from "next/image";
 import { AuthButton } from "../feature/auth/AuthButton";
+import LocaleSwitcher from "../feature/langage/LocaleSwitcher";
 
 export function Header() {
   return (

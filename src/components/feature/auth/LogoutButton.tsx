@@ -5,8 +5,10 @@ import { Loader } from "@/components/ui/Loader";
 import { useMutation } from "@tanstack/react-query";
 import { LogOut } from "lucide-react";
 import { signOut } from "next-auth/react";
+import { useTranslations } from "next-intl";
 
 export const LogoutButton = () => {
+  const t = useTranslations("LogoutButton")
   const mutation = useMutation({
     mutationFn: async () => signOut(),
   });
@@ -22,7 +24,7 @@ export const LogoutButton = () => {
       ) : (
         <LogOut size={12} className="ml-0.5 mr-2" />
       )}
-      Log out
+      {t("titleButton")}
     </Button>
   );
 };
