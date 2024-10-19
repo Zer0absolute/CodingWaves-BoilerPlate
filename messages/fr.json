@@ -1,0 +1,26 @@
+{
+  "LocaleSwitcher": {
+    "fr": "Français",
+    "en": "English",
+    "label": "Language"
+  },
+  "HomePage": {
+    "titleCard": "Création CodingWaves Boilerplate",
+    "cardDescription": "Déployez votre nouveau projet en un clic."
+  },
+  "LoggedInButton": {
+    "dropDownTitleAccount": "Mon Compte",
+    "dropDownTitleProfile": "Profil",
+    "dropDownTitleBilling": "Facturation",
+    "dropDownTitleSettings": "Paramètres",
+    "dropDownTitleLogout": "Se déconnecter",
+    "alertDialogDescription": "Etes-vous sûr de vouloir vous déconnecter ?",
+    "buttonCancel": "Annuler"
+  },
+  "LogoutButton": {
+    "titleButton": "Se déconnecter"
+  },
+  "Footer": {
+    "linkPrivacy": "Confidentialité"
+  }
+}

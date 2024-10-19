@@ -1,0 +1,26 @@
+{
+  "LocaleSwitcher": {
+    "fr": "French",
+    "en": "English",
+    "label": "Language"
+  },
+  "HomePage": {
+    "titleCard": "Create CodingWaves Boilerplate",
+    "cardDescription": "Deploy your new project in one-click."
+  },
+  "LoggedInButton": {
+    "dropDownTitleAccount": "My Account",
+    "dropDownTitleProfile": "Profile",
+    "dropDownTitleBilling": "Billing",
+    "dropDownTitleSettings": "Settings",
+    "dropDownTitleLogout": "Log out",
+    "alertDialogDescription": "Are you sure you want to logout ?",
+    "buttonCancel": "Cancel"
+  },
+  "LogoutButton": {
+    "titleButton": "Log out"
+  },
+  "Footer": {
+    "linkPrivacy": "Privacy"
+  }
+}
