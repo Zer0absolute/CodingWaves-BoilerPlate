@@ -11,9 +11,11 @@ import {
 } from "@/components/ui/card";
 import { Loader } from "@/components/ui/Loader";
 import { auth } from "@/lib/auth";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 export default async function Account() {
+  // const t = useTranslations("")
   const session = await auth();
 
   if (!session) {
