@@ -17,10 +17,26 @@
     "alertDialogDescription": "Etes-vous sûr de vouloir vous déconnecter ?",
     "buttonCancel": "Annuler"
   },
+  "LoginButton": {
+    "titleButton": "Se connecter"
+  },
   "LogoutButton": {
     "titleButton": "Se déconnecter"
   },
   "Footer": {
     "linkPrivacy": "Confidentialité"
+  },
+  "AccountPage": {
+    "billingButton": "Facturation",
+    "settingsButton": "Paramètres"
+  },
+  "SettingsPage": {
+    "title": "Paramètres",
+    "p": "Vos parametres de profil",
+    "cardTitle": "Parametres globals",
+    "cardDescription": "Modifier vos informations puis sauvegarder.",
+    "inputName": "Nom",
+    "buttonModify": "Modifier",
+    "buttonDelete": "Supprimer mon compte"
   }
 }

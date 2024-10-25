@@ -17,10 +17,26 @@
     "alertDialogDescription": "Are you sure you want to logout ?",
     "buttonCancel": "Cancel"
   },
+  "LoginButton": {
+    "titleButton": "Login"
+  },
   "LogoutButton": {
     "titleButton": "Log out"
   },
   "Footer": {
     "linkPrivacy": "Privacy"
+  },
+  "AccountPage": {
+    "billingButton": "Billing",
+    "settingsButton": "Settings"
+  },
+  "SettingsPage": {
+    "title": "Settings",
+    "p": "Your profile settings",
+    "cardTitle": "Global settings",
+    "cardDescription": "Edit your information then save.",
+    "inputName": "name",
+    "buttonModify": "To modify",
+    "buttonDelete": "Delete my account"
   }
 }
