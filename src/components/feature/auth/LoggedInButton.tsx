@@ -22,7 +22,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { CreditCard, LanguagesIcon, LogOut, Settings, User } from "lucide-react";
+import { Typography } from "@/components/ui/Typography";
+import {
+  CreditCard,
+  LanguagesIcon,
+  LogOut,
+  Settings,
+  User,
+} from "lucide-react";
 import { Session } from "next-auth";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -68,14 +75,18 @@ export const LoggedInButton = (props: LoggedInButtonProps) => {
                 <span>{t("dropDownTitleProfile")}</span>
               </DropdownMenuItem>
             </Link>
-            <DropdownMenuItem>
-              <CreditCard className="mr-2 size-4" />
-              <span>{t("dropDownTitleBilling")}</span>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Settings className="mr-2 size-4" />
-              <span>{t("dropDownTitleSettings")}</span>
-            </DropdownMenuItem>
+            <Link href={"/account/billing"}>
+              <DropdownMenuItem>
+                <CreditCard className="mr-2 size-4" />
+                <span>{t("dropDownTitleBilling")}</span>
+              </DropdownMenuItem>
+            </Link>
+            <Link href={"/account/settings"}>
+              <DropdownMenuItem>
+                <Settings className="mr-2 size-4" />
+                <span>{t("dropDownTitleSettings")}</span>
+              </DropdownMenuItem>
+            </Link>
             <DropdownMenuItem>
               <LanguagesIcon className="mr-2 size-4" />
               <LocaleSwitcher />
@@ -92,10 +103,12 @@ export const LoggedInButton = (props: LoggedInButtonProps) => {
         <AlertDialogContent className="bg-primary-foreground">
           <AlertDialogHeader>
             <AlertDialogTitle>
-              <LogOut className="mr-2 inline-flex size-4" />
-              <span>{t("dropDownTitleLogout")}</span>
+              <Typography variant={"h3"}>
+                <LogOut className="mr-2 inline-flex size-4" />
+                <span>{t("dropDownTitleLogout")}</span>
+              </Typography>
             </AlertDialogTitle>
-            <AlertDescription>{t("alertDialogDescription")}</AlertDescription>
+            <AlertDescription><Typography variant={"p"}>{t("alertDialogDescription")}</Typography></AlertDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel asChild>
