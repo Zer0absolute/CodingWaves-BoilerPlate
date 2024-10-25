@@ -9,7 +9,7 @@ import LocaleSwitcher from "../feature/langage/LocaleSwitcher";
 
 export function Header() {
   return (
-    <header className="bg-background sticky top-0 z-40 w-full border-b">
+    <header className="bg-primary-foreground sticky top-0 z-50 w-full border-b">
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
         <div className="flex gap-2 p-2 items-center">
           <Image
