@@ -6,11 +6,17 @@ import { useMutation } from "@tanstack/react-query";
 import { LogOut } from "lucide-react";
 import { signOut } from "next-auth/react";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 
 export const LogoutButton = () => {
   const t = useTranslations("LogoutButton")
+  const router = useRouter()
+  const handleSignOut = () => {
+    signOut()
+    router.push("/")
+  }
   const mutation = useMutation({
-    mutationFn: async () => signOut(),
+    mutationFn: async () => handleSignOut(),
   });
 
   return (
