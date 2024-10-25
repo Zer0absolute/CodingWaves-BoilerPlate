@@ -69,7 +69,7 @@ model VerificationToken {
 }
 
 model Subscription {
-  stripeSubcriptionId String @id @unique
+  stripeSubscriptionId String @id @unique
   interval String
   status String
   planId String

@@ -36,7 +36,7 @@ export async function POST(req: Request) {
 
     await prisma.subscription.create({
       data: {
-        stripeSubcriptionId: subscription.id,
+        stripeSubscriptionId: subscription.id,
         userId: user.id,
         currentPeriodStart: subscription.current_period_start,
         currentPeriodEnd: subscription.current_period_end,
@@ -54,7 +54,7 @@ export async function POST(req: Request) {
 
     await prisma.subscription.update({
       where: {
-        stripeSubcriptionId: subscription.id,
+        stripeSubscriptionId: subscription.id,
       },
       data: {
         planId: subscription.items.data[0].plan.id,

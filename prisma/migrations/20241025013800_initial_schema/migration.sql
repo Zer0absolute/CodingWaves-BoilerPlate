@@ -51,7 +51,7 @@ CREATE TABLE "verificationtokens" (
 
 -- CreateTable
 CREATE TABLE "Subscription" (
-    "stripeSubcriptionId" TEXT NOT NULL,
+    "stripeSubscriptionId" TEXT NOT NULL,
     "interval" TEXT NOT NULL,
     "status" TEXT NOT NULL,
     "planId" TEXT NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE "Subscription" (
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "userId" TEXT NOT NULL,
 
-    CONSTRAINT "Subscription_pkey" PRIMARY KEY ("stripeSubcriptionId")
+    CONSTRAINT "Subscription_pkey" PRIMARY KEY ("stripeSubscriptionId")
 );
 
 -- CreateIndex
@@ -83,7 +83,7 @@ CREATE UNIQUE INDEX "verificationtokens_token_key" ON "verificationtokens"("toke
 CREATE UNIQUE INDEX "verificationtokens_identifier_token_key" ON "verificationtokens"("identifier", "token");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Subscription_stripeSubcriptionId_key" ON "Subscription"("stripeSubcriptionId");
+CREATE UNIQUE INDEX "Subscription_stripeSubscriptionId_key" ON "Subscription"("stripeSubscriptionId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Subscription_userId_key" ON "Subscription"("userId");
