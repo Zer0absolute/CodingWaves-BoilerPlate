@@ -17,10 +17,87 @@
     "alertDialogDescription": "Etes-vous sûr de vouloir vous déconnecter ?",
     "buttonCancel": "Annuler"
   },
+  "LoginButton": {
+    "titleButton": "Se connecter"
+  },
   "LogoutButton": {
     "titleButton": "Se déconnecter"
   },
   "Footer": {
     "linkPrivacy": "Confidentialité"
+  },
+  "AccountPage": {
+    "billingButton": "Facturation",
+    "settingsButton": "Paramètres"
+  },
+  "PaymentPage": {
+    "PricingSection": {
+      "titleCard": "Trouvez un plan qui correspond à vos objectifs",
+      "descriptionCard": "Choisissez l’abonnement qui répond le mieux à vos besoins et à vos objectifs. Nous avons une solution adaptée pour vous.",
+      "isMostPop": "Populaire",
+      "priceSym": "€",
+      "buttonStarted": "Get Started"
+    },
+    "PricingCompare": {
+      "titleCard": "Comparer les plans",
+      "titleDescription": "Choisissez le plan qui vous convient",
+      "titleTableRowOne": "Abonnement",
+      "titleTableRowTwo": "Prix",
+      "priceSym": "€",
+      "buttonChoose": "Choisir"
+    },
+    "PricingModify": {
+      "title": "modifier votre abonnement",
+      "description": "Gérez votre abonnement facilement en utilisant les options ci-dessous.",
+      "titleCard": "Mon abonnement",
+      "descriptionCard": "Vous pouvez mettre à niveau votre abonnement pour accéder à plus de fonctionnalités en cliquant sur Mise à niveau, ou choisir de modifier les informations de votre abonnement actuel, telles que l'annulation de l'abonnement ou la mise à jour de vos informations de paiement.",
+      "upgradeButton": "Mise à niveau",
+      "modifyButton": "Modifier"
+    },
+    "PricingUpgrade": {
+      "title": "Mettez à niveau votre abonnement",
+      "description": "Mettez à jour votre abonnement facilement en utilisant les options ci-dessous.",
+      "titlePlan": "caractéristiques",
+      "isMostPop": "Populaire"
+    }
+  },
+  "AccordionComponent": {
+    "title": "Questions fréquente",
+    "General": {
+      "titleCategory": "Général",
+      "question": {}
+    },
+    "Upgrade": {
+      "titleCategory": "Mise à niveau",
+      "question": {}
+    },
+    "Cancel": {
+      "titleCategory": "Annuler",
+      "question": {
+        "subscriptionQuestion": "Comment puis-je annuler mon abonnement ?"
+      },
+      "response": {
+        "subscriptionResponse": "Vous pouvez annuler votre abonnement à tout moment dans vos paramètres de paiement. Lorsque vous annulez votre abonnement, celui-ci prend fin à la fin du cycle de facturation en cours."
+      }
+    }
+  },
+  "SuccessPaymentPage": {
+    "cardTitle": "Paiement réussi !",
+    "cardDescription": "Vous etes maintenant membre premium",
+    "buttonCard": "Retour sur le Dashboard"
+  },
+  "CancelPaymentPage": {
+    "cardTitle": "Paiement échoué !",
+    "cardDescription": "Oups, il y a une erreur",
+    "buttonCard": "Retour aux abonnements"
+  },
+  "SettingsPage": {
+    "title": "Paramètres",
+    "p": "Vos parametres de profil",
+    "cardTitle": "Parametres globals",
+    "cardDescription": "Modifier vos informations puis sauvegarder.",
+    "inputName": "Nom",
+    "buttonModify": "Modifier",
+    "buttonDelete": "Supprimer mon compte"
   }
 }
