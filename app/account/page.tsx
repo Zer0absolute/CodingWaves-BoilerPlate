@@ -9,17 +9,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Loader } from "@/components/ui/Loader";
 import { auth } from "@/lib/auth";
-import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default async function Account() {
-  // const t = useTranslations("")
   const session = await auth();
 
   if (!session) {
-    throw new Error("No session found");
+    redirect("/");
   }
 
   return (
@@ -38,6 +36,12 @@ export default async function Account() {
       </CardHeader>
       <CardContent className="flex flex-col gap-2">
       <Link
+          className={buttonVariants({ variant: "outline", size: "lg" })}
+          href="/account/payment"
+        >
+          Payment
+        </Link>
+        <Link
           className={buttonVariants({ variant: "outline", size: "lg" })}
           href="/account/billing"
         >
