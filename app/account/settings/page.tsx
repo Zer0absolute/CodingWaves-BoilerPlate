@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Typography } from "@/components/ui/Typography";
 import { deleteUser, getUser, updateUser } from "@/lib/actionsUsers";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -45,8 +46,8 @@ export default function SettingsPage() {
 
   return (
     <section className="m-auto mt-4 max-w-lg p-3">
-      <h2 className="text-3xl font-black uppercase">{t("title")}</h2>
-      <p className="text-lg text-muted-foreground">{t("p")}</p>
+      <Typography variant={"h2"}>{t("title")}</Typography>
+      <Typography variant={"p"}>{t("p")}</Typography>
       <div className="mx-1 my-2 h-px w-12 bg-white"></div>
       <form action={updateUser}>
         <input type="hidden" name="id" value={user?.id} />
