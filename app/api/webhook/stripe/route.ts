@@ -7,32 +7,51 @@ export async function POST(req: Request) {
   const body = await req.text();
   const signature = headers().get("Stripe-signature") as string;
 
+  if (!process.env.STRIPE_WEBHOOK_SECRET) {
+    console.error("Stripe webhook secret is not set.");
+    return new Response("Server error", { status: 500 });
+  }
+
   let event: Stripe.Event;
 
   try {
     event = stripe.webhooks.constructEvent(
       body,
       signature,
-      process.env.STRIPE_WEBHOOK_SECRET as string
+      process.env.STRIPE_WEBHOOK_SECRET
     );
-  } catch (error: unknown) {
+  } catch (error) {
+    console.error("Invalid Stripe signature:", error);
     return new Response("Erreur webhook stripe", { status: 400 });
   }
 
   const session = event.data.object as Stripe.Checkout.Session;
 
-  if (event.type === "checkout.session.completed") {
+  switch (event.type) {
+    case "checkout.session.completed":
+      await handleCheckoutSessionCompleted(session);
+      break;
+    case "invoice.payment_succeeded":
+      await handleInvoicePaymentSucceeded(session);
+      break;
+    default:
+      console.log(`Unhandled event type ${event.type}`);
+  }
+
+  return new Response(null, { status: 200 });
+}
+
+async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) {
+  try {
     const subscription = await stripe.subscriptions.retrieve(
       session.subscription as string
     );
     const customerId = String(session.customer);
 
     const user = await prisma.user.findUnique({
-      where: {
-        stripeCustomerId: customerId,
-      },
+      where: { stripeCustomerId: customerId },
     });
-    if (!user) throw new Error("Utilisateur inexistant");
+    if (!user) return new Response("Utilisateur inexistant", { status: 404 });
 
     await prisma.subscription.create({
       data: {
@@ -45,17 +64,19 @@ export async function POST(req: Request) {
         interval: String(subscription.items.data[0].plan.interval),
       },
     });
+  } catch (error) {
+    console.error("Error handling checkout session completed:", error);
   }
+}
 
-  if (event.type === "invoice.payment_succeeded") {
+async function handleInvoicePaymentSucceeded(session: Stripe.Checkout.Session) {
+  try {
     const subscription = await stripe.subscriptions.retrieve(
       session.subscription as string
     );
 
     await prisma.subscription.update({
-      where: {
-        stripeSubscriptionId: subscription.id,
-      },
+      where: { stripeSubscriptionId: subscription.id },
       data: {
         planId: subscription.items.data[0].plan.id,
         currentPeriodStart: subscription.current_period_start,
@@ -63,6 +84,7 @@ export async function POST(req: Request) {
         status: subscription.status,
       },
     });
+  } catch (error) {
+    console.error("Error handling invoice payment succeeded:", error);
   }
-  return new Response(null, { status: 200 });
 }
